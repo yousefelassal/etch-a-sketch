@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.design-container{
+    width: 110vh;
+    height: 90vh;
+    background: linear-gradient(145deg, #ff4747, #e63b3b);
+    border-radius: 9vh;
+    box-shadow: 20px 20px 60px #d9d9d9,
+    -20px -20px 60px #ffffff;
+    display:flex;
+    flex-direction: column;
+}
+
+.grid-container{
+    width: 85%;
+    height: 85%;
+    background-color: aliceblue;
+    margin: 0 auto;
+}
+
+.buttons-container, .bottom-area{
+    width: 100%;
+    height:8vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid-buttons, .other-buttons{
+    padding: 0 4vh;
+    justify-content: center;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vh;
+    background: #FBCA1F;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    height: 4vh;
+    padding: 0.5vh;
+  }
+  
+  button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+  
+  button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+
+.circle-left,.circle-right{
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  1px 1px 2px #d9d9d9,
+             -1px -1px 2px #ffffff;
+    margin: 2vh 2vh;
+    border: 0.1px solid rgb(216, 216, 216);
+}
+
+.circle-left{
+    transform: translate(-1vh, -2vh);
+}
+
+.circle-right{
+    transform: translate(1vh, -2vh);
+}
