@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Satisfy&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -40,9 +40,22 @@
     align-items: center;
 }
 
+.buttons-container{
+    padding: 0 4vh;
+}
+
 .grid-buttons, .other-buttons{
     padding: 0 4vh;
     justify-content: center;
+    border: 1px solid black;
+}
+
+.grid-buttons{
+    flex: 1;
+}
+
+.other-buttons{
+    flex: 2;
 }
 
 button {
@@ -83,4 +96,11 @@ button {
 
 .circle-right{
     transform: translate(1vh, -2vh);
+}
+
+.title{
+    font-family: 'Satisfy', cursive;
+    font-size: 4vh;
+    text-align: center;
+    color: #f7c201f6;
 }
