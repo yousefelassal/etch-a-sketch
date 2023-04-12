@@ -29,12 +29,19 @@ body{
     border: 3px solid black;
 }
 
-.grid-container{
+#grid-container{
     width: 85%;
     height: 85%;
-    background-color: aliceblue;
+    background-color: white;
     margin: 0 auto;
     border: 3px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-square{
+    flex: 1;
+    background: linear-gradient(145deg, #ff4747, #ededed);
 }
 
 .buttons-container, .bottom-area{
