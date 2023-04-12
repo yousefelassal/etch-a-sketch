@@ -4,6 +4,7 @@ const grid64 = document.getElementById('64x64');
 
 const clear = document.getElementById('clear');
 const eraser = document.getElementById('eraser');
+const save = document.getElementById('save');
 
 const container = document.getElementById('grid-container');
 

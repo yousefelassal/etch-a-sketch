@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="./script.js" defer></script>
     <title>Etch-A-Sketch</title>
 </head>
 <body>
@@ -36,5 +36,19 @@
             
         </div>
     </div>
+    <script src="html2canvas.min.js"></script>
+    <script>
+        document.getElementById("save").onclick = function(){
+            const screenshotTarget = document.getElementById("grid-container");
+            html2canvas(screenshotTarget).then((canvas) => {
+                const image = canvas.toDataURL("image/png");
+                var anchor = document.createElement("a");
+                anchor.setAttribute("href", image);
+                anchor.setAttribute("download", "my-sketch.png");
+                anchor.click();
+                anchor.remove();
+            })
+        }
+    </script>
 </body>
 </html>
