@@ -3,6 +3,7 @@ const grid32 = document.getElementById('32x32');
 const grid64 = document.getElementById('64x64');
 
 const clear = document.getElementById('clear');
+const eraser = document.getElementById('eraser');
 
 const container = document.getElementById('grid-container');
 
@@ -11,6 +12,8 @@ const colorpicker = document.getElementById('colorpicker');
 let isGrid16 = true;
 let isGrid32 = false;
 let isGrid64 = false;
+
+let isMouseDown = false;
 
 let gridSize = 0;
 
@@ -24,11 +27,24 @@ for(let i = 0; i < 16; i++) {
         cell.classList.add('grid-cell');
         row.appendChild(cell);
         //handle hover
-        cell.addEventListener('mouseover', () => {
+        cell.addEventListener('mousedown', () => {
             cell.style.background = colorpicker.value;
+            isMouseDown = true;
         })
-        cell.addEventListener('mouseout', () => {
-            cell.style.background = 'white';
+        cell.addEventListener('mouseup', () => {
+            isMouseDown = false;
+        })
+        cell.addEventListener('mouseover', () => {
+            if(isMouseDown){
+                cell.style.background = colorpicker.value;
+            }
+        })
+        
+        //handle eraser button
+        eraser.addEventListener('click', () => {
+            cell.addEventListener('click', () => {
+                cell.style.background = 'white';
+            })
         })
     }
 }
@@ -54,6 +70,19 @@ grid16.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
+            //handle hover
+            cell.addEventListener('mousedown', () => {
+                cell.style.background = colorpicker.value;
+                isMouseDown = true;
+            })
+            cell.addEventListener('mouseup', () => {
+                isMouseDown = false;
+            })
+            cell.addEventListener('mouseover', () => {
+                if(isMouseDown){
+                    cell.style.background = colorpicker.value;
+                }
+            })
         }
     }
 
@@ -77,6 +106,19 @@ grid32.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
+            //handle hover
+            cell.addEventListener('mousedown', () => {
+                cell.style.background = colorpicker.value;
+                isMouseDown = true;
+            })
+            cell.addEventListener('mouseup', () => {
+                isMouseDown = false;
+            })
+            cell.addEventListener('mouseover', () => {
+                if(isMouseDown){
+                    cell.style.background = colorpicker.value;
+                }
+            })
         }
     }
     
@@ -101,6 +143,19 @@ grid64.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
+            //handle hover
+            cell.addEventListener('mousedown', () => {
+                cell.style.background = colorpicker.value;
+                isMouseDown = true;
+            })
+            cell.addEventListener('mouseup', () => {
+                isMouseDown = false;
+            })
+            cell.addEventListener('mouseover', () => {
+                if(isMouseDown){
+                    cell.style.background = colorpicker.value;
+                }
+            })
         }
     }
     
