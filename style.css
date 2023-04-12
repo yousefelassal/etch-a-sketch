@@ -52,10 +52,6 @@ body{
     background: white;
 }
 
-.grid-cell:hover{
-    background: #FBCA1F;
-}
-
 .buttons-container, .bottom-area{
     width: 100%;
     height:8vh;
