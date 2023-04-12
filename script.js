@@ -14,6 +14,8 @@ let isGrid32 = false;
 let isGrid64 = false;
 
 let isMouseDown = false;
+let isEreaser = false;
+let isEreaserDown = false;
 
 let gridSize = 0;
 
@@ -28,31 +30,45 @@ for(let i = 0; i < 16; i++) {
         let cell = document.createElement('div');
         cell.classList.add('grid-cell');
         row.appendChild(cell);
+
+        //handle eraser button
+        eraser.addEventListener('click', () => {
+            isEreaser = true;
+            eraser.classList.add('active');
+            eraser.addEventListener('click', () => {
+                isEreaser = false;
+                eraser.classList.remove('active');
+            })
+        })
+
         //handle clicking on grid cell
         cell.addEventListener('mousedown', () => {
-            cell.style.background = colorpicker.value;
-            isMouseDown = true;
-            clear.disabled = false;
+            if(isEreaser){
+                cell.style.background = 'white';
+                isEreaserDown = true;
+            }
+            else{
+                cell.style.background = colorpicker.value;
+                isMouseDown = true;
+                clear.disabled = false;
+            }
         })
         cell.addEventListener('mouseup', () => {
             isMouseDown = false;
+            isEreaserDown = false;
         })
         cell.addEventListener('mouseover', () => {
             if(isMouseDown){
                 cell.style.background = colorpicker.value;
+            }
+            if(isEreaserDown){
+                cell.style.background = 'white';
             }
         })
         
         //handle clear button
         clear.addEventListener('click', () => {
             cell.style.background = 'white';
-        })
-
-        //handle eraser button
-        eraser.addEventListener('click', () => {
-            cell.addEventListener('click', () => {
-                cell.style.background = 'white';
-            })
         })
     }
 }
@@ -77,20 +93,42 @@ grid16.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
+            
+            //handle eraser button
+            eraser.addEventListener('click', () => {
+                isEreaser = true;
+                eraser.classList.add('active');
+                eraser.addEventListener('click', () => {
+                    isEreaser = false;
+                    eraser.classList.remove('active');
+                })
+            })
+
             //handle clicking on grid cell
             cell.addEventListener('mousedown', () => {
-                cell.style.background = colorpicker.value;
-                isMouseDown = true;
+                if(isEreaser){
+                    cell.style.background = 'white';
+                    isEreaserDown = true;
+                }
+                else{
+                    cell.style.background = colorpicker.value;
+                    isMouseDown = true;
+                    clear.disabled = false;
+                }
             })
             cell.addEventListener('mouseup', () => {
                 isMouseDown = false;
+                isEreaserDown = false;
             })
             cell.addEventListener('mouseover', () => {
                 if(isMouseDown){
                     cell.style.background = colorpicker.value;
                 }
+                if(isEreaserDown){
+                    cell.style.background = 'white';
+                }
             })
-
+            
             //handle clear button
             clear.addEventListener('click', () => {
                 cell.style.background = 'white';
@@ -119,20 +157,42 @@ grid32.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
+
+            //handle eraser button
+            eraser.addEventListener('click', () => {
+                isEreaser = true;
+                eraser.classList.add('active');
+                eraser.addEventListener('click', () => {
+                    isEreaser = false;
+                    eraser.classList.remove('active');
+                })
+            })
+
             //handle clicking on grid cell
             cell.addEventListener('mousedown', () => {
-                cell.style.background = colorpicker.value;
-                isMouseDown = true;
+                if(isEreaser){
+                    cell.style.background = 'white';
+                    isEreaserDown = true;
+                }
+                else{
+                    cell.style.background = colorpicker.value;
+                    isMouseDown = true;
+                    clear.disabled = false;
+                }
             })
             cell.addEventListener('mouseup', () => {
                 isMouseDown = false;
+                isEreaserDown = false;
             })
             cell.addEventListener('mouseover', () => {
                 if(isMouseDown){
                     cell.style.background = colorpicker.value;
                 }
+                if(isEreaserDown){
+                    cell.style.background = 'white';
+                }
             })
-
+            
             //handle clear button
             clear.addEventListener('click', () => {
                 cell.style.background = 'white';
@@ -161,20 +221,42 @@ grid64.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
+            
+            //handle eraser button
+            eraser.addEventListener('click', () => {
+                isEreaser = true;
+                eraser.classList.add('active');
+                eraser.addEventListener('click', () => {
+                    isEreaser = false;
+                    eraser.classList.remove('active');
+                })
+            })
+
             //handle clicking on grid cell
             cell.addEventListener('mousedown', () => {
-                cell.style.background = colorpicker.value;
-                isMouseDown = true;
+                if(isEreaser){
+                    cell.style.background = 'white';
+                    isEreaserDown = true;
+                }
+                else{
+                    cell.style.background = colorpicker.value;
+                    isMouseDown = true;
+                    clear.disabled = false;
+                }
             })
             cell.addEventListener('mouseup', () => {
                 isMouseDown = false;
+                isEreaserDown = false;
             })
             cell.addEventListener('mouseover', () => {
                 if(isMouseDown){
                     cell.style.background = colorpicker.value;
                 }
+                if(isEreaserDown){
+                    cell.style.background = 'white';
+                }
             })
-
+            
             //handle clear button
             clear.addEventListener('click', () => {
                 cell.style.background = 'white';
