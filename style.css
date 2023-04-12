@@ -74,6 +74,7 @@ button {
     box-shadow: 0.1em 0.1em;
     height: 4vh;
     padding: 0.5vh;
+    cursor: pointer;
   }
   
   button:hover {
