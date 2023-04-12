@@ -6,6 +6,8 @@ const clear = document.getElementById('clear');
 
 const container = document.getElementById('grid-container');
 
+const colorpicker = document.getElementById('colorpicker');
+
 let isGrid16 = true;
 let isGrid32 = false;
 let isGrid64 = false;
@@ -21,6 +23,13 @@ for(let i = 0; i < 16; i++) {
         let cell = document.createElement('div');
         cell.classList.add('grid-cell');
         row.appendChild(cell);
+        //handle hover
+        cell.addEventListener('mouseover', () => {
+            cell.style.background = colorpicker.value;
+        })
+        cell.addEventListener('mouseout', () => {
+            cell.style.background = 'white';
+        })
     }
 }
 

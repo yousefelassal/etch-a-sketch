@@ -53,7 +53,7 @@ body{
 }
 
 .grid-cell:hover{
-    background: linear-gradient(145deg, #ff4747, #e63b3b);
+    background: #FBCA1F;
 }
 
 .buttons-container, .bottom-area{
