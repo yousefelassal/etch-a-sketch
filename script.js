@@ -17,6 +17,8 @@ let isMouseDown = false;
 
 let gridSize = 0;
 
+clear.disabled = true;
+
 //on default grid is set to 16x16
 for(let i = 0; i < 16; i++) {
     let row = document.createElement('div');
@@ -26,10 +28,11 @@ for(let i = 0; i < 16; i++) {
         let cell = document.createElement('div');
         cell.classList.add('grid-cell');
         row.appendChild(cell);
-        //handle hover
+        //handle clicking on grid cell
         cell.addEventListener('mousedown', () => {
             cell.style.background = colorpicker.value;
             isMouseDown = true;
+            clear.disabled = false;
         })
         cell.addEventListener('mouseup', () => {
             isMouseDown = false;
@@ -40,6 +43,11 @@ for(let i = 0; i < 16; i++) {
             }
         })
         
+        //handle clear button
+        clear.addEventListener('click', () => {
+            cell.style.background = 'white';
+        })
+
         //handle eraser button
         eraser.addEventListener('click', () => {
             cell.addEventListener('click', () => {
@@ -50,7 +58,6 @@ for(let i = 0; i < 16; i++) {
 }
 
 grid16.disabled = true;
-clear.disabled = true;
 
 //handle grid size buttons
 grid16.addEventListener('click', () => {
@@ -70,7 +77,7 @@ grid16.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
-            //handle hover
+            //handle clicking on grid cell
             cell.addEventListener('mousedown', () => {
                 cell.style.background = colorpicker.value;
                 isMouseDown = true;
@@ -83,6 +90,12 @@ grid16.addEventListener('click', () => {
                     cell.style.background = colorpicker.value;
                 }
             })
+
+            //handle clear button
+            clear.addEventListener('click', () => {
+                cell.style.background = 'white';
+            })
+
         }
     }
 
@@ -106,7 +119,7 @@ grid32.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
-            //handle hover
+            //handle clicking on grid cell
             cell.addEventListener('mousedown', () => {
                 cell.style.background = colorpicker.value;
                 isMouseDown = true;
@@ -118,6 +131,11 @@ grid32.addEventListener('click', () => {
                 if(isMouseDown){
                     cell.style.background = colorpicker.value;
                 }
+            })
+
+            //handle clear button
+            clear.addEventListener('click', () => {
+                cell.style.background = 'white';
             })
         }
     }
@@ -143,7 +161,7 @@ grid64.addEventListener('click', () => {
             let cell = document.createElement('div');
             cell.classList.add('grid-cell');
             row.appendChild(cell);
-            //handle hover
+            //handle clicking on grid cell
             cell.addEventListener('mousedown', () => {
                 cell.style.background = colorpicker.value;
                 isMouseDown = true;
@@ -156,24 +174,13 @@ grid64.addEventListener('click', () => {
                     cell.style.background = colorpicker.value;
                 }
             })
+
+            //handle clear button
+            clear.addEventListener('click', () => {
+                cell.style.background = 'white';
+            })
         }
     }
     
     grid64.disabled = true;
-})
-
-//handle clear button
-clear.addEventListener('click', () => {
-    container.innerHTML = '';
-    for(let i = 0; i < gridSize; i++) {
-        let row = document.createElement('div');
-        row.classList.add('grid-row');
-        container.appendChild(row);
-        for(let j = 0; j < gridSize; j++) {
-            let cell = document.createElement('div');
-            cell.classList.add('grid-cell');
-            row.appendChild(cell);
-        }
-    }
-    clear.disabled = true;
 })
