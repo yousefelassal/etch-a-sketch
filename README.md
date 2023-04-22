@@ -3,6 +3,7 @@
 <h1>Etch-A-Sketch</h1>
 <p>JavaScript Etch-A-Sketch</p>
 <p><a href="https://www.theodinproject.com/paths/foundations/courses/foundations">Foundation</a></p>
+<p><a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch">Project Requirements</a></p>
 </div>
 
 <div>
