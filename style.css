@@ -7,6 +7,7 @@
 
 body{
     cursor: url("images/cursor-cropped.svg") 0 0, auto;
+    background-image: url("images/backdrop.svg");
 }
 
 .container{
@@ -22,11 +23,12 @@ body{
     height: 90vh;
     background: linear-gradient(145deg, #ff4747, #e63b3b);
     border-radius: 9vh;
-    box-shadow: 20px 20px 60px #d9d9d9,
-    -20px -20px 60px #ffffff;
+    /* box-shadow: 20px 20px 60px #d9d9d9, */
+    /* -20px -20px 60px #ffffff; */
     display:flex;
     flex-direction: column;
-    border: 3px solid black;
+    /* border: 3px solid black; */
+    box-shadow: 0px 0px 0px 0px #b00c0c inset, 0px -10px 10px 10px #b00c0c inset, 0px 1px 0px 2px #b00c0c inset, 0 55px 10px -25px rgba(0,0,0,0.1), 0 65px 30px -10px rgba(0,0,0,0.5);
 }
 
 #grid-container{
@@ -115,7 +117,9 @@ button {
     box-shadow:  1px 1px 2px #d9d9d9,
              -1px -1px 2px #ffffff;
     margin: 2vh 2vh;
-    border: 0.1px solid rgb(216, 216, 216);
+    /* border: 0.1px solid rgb(216, 216, 216); */
+    box-shadow: 0px 0px 0px 0px #e6e6e6 inset, 0px -10px 10px 10px #e6e6e6 inset, 0px 1px 0px 2px #e6e6e6 inset, 0 55px 10px -25px rgba(0,0,0,0.1), 0 65px 30px -10px rgba(0,0,0,0.5);
+
 }
 
 .circle-left{
